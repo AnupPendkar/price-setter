@@ -1,0 +1,226 @@
+:root {
+  /* ----PRIMERY---- */
+  --full-slider-bar: hsl(174, 77%, 80%);
+  --slider-backround: hsl(174, 86%, 45%);
+  --discount-background: hsl(14, 92%, 95%);
+  --discount-text: hsl(15, 100%, 70%);
+  --CTA-text: hsl(226, 100%, 87%);
+
+  /* ----SECONDARY---- */
+  --pricing-component-background: hsl(0, 0%, 100%);
+  --main-background: hsl(230, 100%, 99%);
+  --empty-slider-bar: hsl(224, 65%, 95%);
+  --toggle-background: hsl(223, 50%, 87%);
+  --text: hsl(225, 20%, 60%);
+  --CTA-background: hsl(227, 35%, 25%);
+
+  --fs: 15px;
+  --fs-large: 26px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+input:checked + .slider {
+  background-color: var(--slider-backround);
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(19px);
+  -ms-transform: translateX(19px);
+  transform: translateX(19px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+p {
+  font-size: var(--fs);
+  color: var(--text);
+  font-weight: 600;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  background: url("images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+.container .main-title {
+  font-size: 23px;
+  margin: 1rem 0;
+  margin-top: 2rem;
+}
+.container .title-below {
+  font-size: var(--fs);
+  margin-bottom: 3rem;
+}
+
+.main-container {
+  background: var(--main-background);
+  width: 100%;
+  padding: 2rem 1rem;
+}
+.main-container .top {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.top .pageviews {
+  letter-spacing: 2px;
+}
+.top .pricing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+.top .price {
+  color: var(--CTA-background);
+  font-size: var(--fs-large);
+  font-weight: 800;
+  margin-right: 0.5rem;
+}
+
+.range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  background: var(--full-slider-bar);
+  color: var(--full-slider-bar);
+  outline: none;
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--slider-backround);
+  cursor: pointer;
+  box-shadow: 0px 10px 10px var(--full-slider-bar);
+}
+
+.middle {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.middle .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.item .discount-container {
+  background: var(--discount-background);
+  border-radius: 20px;
+  padding: 0.1rem 0.3rem;
+}
+.discount-container p {
+  color: var(--discount-text);
+}
+
+.bottom {
+  margin-top: 1.5rem;
+}
+.services .group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.bottom .trial-btn {
+  padding: 0.5rem 2rem;
+  border: none;
+  background: var(--CTA-background);
+  color: var(--CTA-text);
+  border-radius: 20px;
+  font-size: var(--fs);
+  margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    padding: 0rem 8rem;
+  }
+  .container .main-title {
+    margin: 0;
+    margin-top: 1rem;
+  }
+  .container .title-below {
+    margin-bottom: 1rem;
+  }
+  .main-container {
+    padding: 1rem 2rem;
+  }
+  .main-container .top {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .bottom {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .services .group {
+    justify-content: left;
+  }
+}

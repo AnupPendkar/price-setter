@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Interactive pricing component</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="main-title">Simple, traffic-based pricing</h1>
+      <p class="title-below">
+        Sign-up for our 30-day trial. <br />
+        No credit card required.
+      </p>
+      <article class="main-container">
+        <div class="top">
+          <p class="pageviews">100K PAGEVIEWS</p>
+          <p class="pricing">
+            <span class="price">$16.00</span>
+            / month
+          </p>
+        </div>
+        <input
+          type="range"
+          class="range"
+          min="1"
+          max="32"
+          step="0.01"
+          value="16"
+        />
+        <div class="middle">
+          <div class="item">
+            <p>Monthly Billing</p>
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="item">
+            <p>Yearly Billing</p>
+            <div class="discount-container">
+              <p>-25%</p>
+            </div>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="services">
+            <div class="group">
+              <img src="./images/icon-check.svg" alt="" />
+              <p>Unlimited webistes</p>
+            </div>
+            <div class="group">
+              <img src="./images/icon-check.svg" alt="" />
+              <p>100% data ownership</p>
+            </div>
+            <div class="group">
+              <img src="./images/icon-check.svg" alt="" />
+              <p>Email reports</p>
+            </div>
+          </div>
+          <button class="trial-btn">Start my trial</button>
+        </div>
+      </article>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
